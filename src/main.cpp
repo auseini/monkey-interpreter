@@ -1,8 +1,8 @@
 #include <iostream>
-
+#include "token.h"
 
 int main() {
 
-    std::cout << "hello" << std::endl;
+    std::cout << token::FUNCTION << std::endl;
     return 0;
 }
