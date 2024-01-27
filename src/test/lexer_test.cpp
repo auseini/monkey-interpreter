@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include <string>
 #include "../token.h"
+#include "../lexer.h"
 TEST(LexerTest, TestNextToken) {
     std::string input = "=+(){},;";
 
@@ -13,12 +14,14 @@ TEST(LexerTest, TestNextToken) {
         {token::RBRACE, "}"},
         {token::COMMA, ","},
         {token::SEMICOLON, ";"},
-        {token::ENDOFFILE, "EOF"},
+        {token::ENDOFFILE, {'\0'}},
     };
 
-
+    Lexer l(input);
     
-
-    EXPECT_STRNE("hello", "world");
-    EXPECT_EQ(7*6, 42);
+    for (auto& token : tests){
+        token::Token tok = l.next_token();
+        EXPECT_EQ(tok.type, token.type);
+        EXPECT_EQ(tok.literal, token.literal);
+    }
 }
