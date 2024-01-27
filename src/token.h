@@ -2,6 +2,12 @@
 #include <string>
 
 namespace token {
+
+    struct Token {
+        std::string type;
+        std::string literal;
+    };
+
     typedef const std::string token;
     token ILLEGAL = "ILLEGAL";
     token ENDOFFILE= "EOF";
