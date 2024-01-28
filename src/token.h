@@ -21,6 +21,13 @@ namespace token {
     //operators
     token ASSIGN = "=";
     token PLUS = "+";
+    token MINUS = "-";
+    token BANG = "!";
+    token ASTERISK = "*";
+    token SLASH = "/";
+    
+    token LT = "<";
+    token GT = ">";
 
     // delimiters
     token COMMA = ",";

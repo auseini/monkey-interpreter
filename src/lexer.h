@@ -19,6 +19,27 @@ class Lexer {
                 case '=':
                     tok = {token::ASSIGN, {ch}};
                     break;
+                case '+':
+                    tok = {token::PLUS, {ch}};
+                    break;
+                case '-':
+                    tok = {token::MINUS, {ch}};
+                    break;
+                case '!':
+                    tok = {token::BANG, {ch}};
+                    break;
+                case '/':
+                    tok = {token::SLASH, {ch}};
+                    break;
+                case '*':
+                    tok = {token::ASTERISK, {ch}};
+                    break;
+                case '<':
+                    tok = {token::LT, {ch}};
+                    break;
+                case '>':
+                    tok = {token::GT, {ch}};
+                    break;
                 case ';':
                     tok = {token::SEMICOLON, {ch}};
                     break;
@@ -30,9 +51,6 @@ class Lexer {
                     break;
                 case ',':
                     tok = {token::COMMA, {ch}};
-                    break;
-                case '+':
-                    tok = {token::PLUS, {ch}};
                     break;
                 case '{':
                     tok = {token::LBRACE, {ch}};
